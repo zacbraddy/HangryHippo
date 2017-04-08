@@ -3,7 +3,7 @@ import logo from '../../common/images/hangry-logo.gif';
 import '../styles/Header.css';
 
 const Header = () => (
-  <div className="panel panel-default header">
+  <div className="panel panel-default header hangry-panel">
     <div className="panel-body">
       <div className="container-fluid header-container">
         <div className="row">
