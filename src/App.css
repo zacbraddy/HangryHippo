@@ -1,11 +1,5 @@
 .App {
-  background: url('common/images/app-background.jpg') 100% 0;
-  background-size: cover;
-  position: absolute;
-  left: 0;
-  top: 0;
-  right: 0;
-  bottom: 0;
+  background: url('common/images/app-background.jpg') top repeat-y;
 }
 
 @media screen and (min-width: 1200px) {

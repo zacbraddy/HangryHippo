@@ -10,9 +10,19 @@ class App extends Component {
   };
 
   addIngredient = () => {
+    if (this.state.nextIngredient.length === 0) return;
+
     this.setState({
       ingredients: this.state.ingredients.concat(this.state.nextIngredient),
       nextIngredient: '',
+    });
+  };
+
+  removeIngredient = (indexToRemove) => {
+    const newIngredients = this.state.ingredients.concat([]);
+    newIngredients.splice(indexToRemove, 1);
+    this.setState({
+      ingredients: newIngredients
     });
   };
 
@@ -34,6 +44,7 @@ class App extends Component {
               ingredients={this.state.ingredients}
               nextIngredient={this.state.nextIngredient}
               addIngredient={this.addIngredient}
+              removeIngredient={this.removeIngredient}
               handleAddNextChange={this.handleAddNextChange}
             />
           </div>
