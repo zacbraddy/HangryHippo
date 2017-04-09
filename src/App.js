@@ -1,12 +1,15 @@
 import React, { Component } from 'react';
 import Header from './Header/components/Header';
 import IngredientList from './IngredientList/components/IngredientList';
+import liveApi from './liveApi';
 import './App.css';
 
 class App extends Component {
   state = {
     ingredients: [],
     nextIngredient: '',
+    results: '',
+    canSearch: false,
   };
 
   addIngredient = () => {
@@ -15,20 +18,37 @@ class App extends Component {
     this.setState({
       ingredients: this.state.ingredients.concat(this.state.nextIngredient),
       nextIngredient: '',
+      canSearch: true,
     });
   };
 
   removeIngredient = (indexToRemove) => {
     const newIngredients = this.state.ingredients.concat([]);
     newIngredients.splice(indexToRemove, 1);
+    const newCanSearch = newIngredients.length !== 0;
+
     this.setState({
-      ingredients: newIngredients
+      ingredients: newIngredients,
+      canSearch: newCanSearch,
     });
   };
 
   handleAddNextChange = (newAddNextIngredient) => {
     this.setState({
       nextIngredient: newAddNextIngredient
+    });
+  };
+
+  doSearch = () => {
+    this.setState({
+      canSearch: false,
+    });
+
+    liveApi(this.state.ingredients.join(',')).then((recipes) => {
+      this.setState({
+        results: JSON.stringify(recipes),
+        canSearch: true,
+      });
     });
   };
 
@@ -44,9 +64,18 @@ class App extends Component {
               ingredients={this.state.ingredients}
               nextIngredient={this.state.nextIngredient}
               addIngredient={this.addIngredient}
+              doSearch={this.doSearch}
               removeIngredient={this.removeIngredient}
               handleAddNextChange={this.handleAddNextChange}
+              canSearch={this.state.canSearch}
             />
+          </div>
+          <div className="col-lg-8">
+            <div className="panel panel-default hangry-panel">
+              <div className="panel-body">
+                {this.state.results}
+              </div>
+            </div>
           </div>
         </div>
       </div>

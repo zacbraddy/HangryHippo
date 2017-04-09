@@ -8,8 +8,10 @@ const propTypes = {
   ingredients: PropTypes.array,
   nextIngredient: PropTypes.string,
   addIngredient: PropTypes.func.isRequired,
+  doSearch: PropTypes.func.isRequired,
   handleAddNextChange: PropTypes.func.isRequired,
   removeIngredient: PropTypes.func.isRequired,
+  canSearch: PropTypes.bool,
 };
 
 const IngredientList = (props) => (
@@ -19,7 +21,7 @@ const IngredientList = (props) => (
         Quick give me a list of the ingredients in your fridge! Don't worry, we're here to help.
       </div>
       <div>
-        <button className="btn btn-success ingredients-go-button">Feed me!!</button>
+        <button className="btn btn-success ingredients-go-button" onClick={props.doSearch} disabled={!props.canSearch}>Feed me!!</button>
       </div>
       <div className="ingredients-list-container">
         {
