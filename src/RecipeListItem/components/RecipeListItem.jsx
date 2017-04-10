@@ -16,7 +16,7 @@ const RecipeListItem = (props) => (
       <i className="glyphicon glyphicon-chevron-right" />
     </button>
     <div className="recipe-list-item-image-container">
-      <img src={props.image} className="img-responsive recipe-list-item-image" />
+      <img src={props.image} className="img-responsive recipe-list-item-image" alt={props.title}/>
     </div>
     <div className="recipe-list-item-text-container">
       <div className="recipe-list-item-title">{props.title}</div>
