@@ -10,8 +10,8 @@ const propTypes = {
 };
 
 const RemovableListItem = (props) => (
-  <div>
-    <button className="btn btn-danger remove-list-item" onClick={(e) => props.removeItem(props.index)}>
+  <div className="removable-list-item">
+    <button className="btn btn-danger btn-removable-list-item" onClick={(e) => props.removeItem(props.index)}>
       <i className="glyphicon glyphicon-remove" />
     </button>
     <ListItem>

@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import '../styles/ListItem.css';
 
 const propTypes = {
-  children: PropTypes.string,
+  children: PropTypes.any,
 };
 
 const ListItem = (props) => (

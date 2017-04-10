@@ -1,4 +1,8 @@
-.btn.remove-list-item {
+.removable-list-item .list-item-card {
+  padding: 10px;
+}
+
+.btn.btn-removable-list-item {
   float: right;
   font-size: 8px;
   margin-top: 8px;

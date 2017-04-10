@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Header from './Header/components/Header';
 import IngredientList from './IngredientList/components/IngredientList';
+import RecipeList from './RecipeList/components/RecipeList';
 import liveApi from './liveApi';
 import './App.css';
 
@@ -8,7 +9,7 @@ class App extends Component {
   state = {
     ingredients: [],
     nextIngredient: '',
-    results: '',
+    recipes: [],
     canSearch: false,
   };
 
@@ -46,7 +47,7 @@ class App extends Component {
 
     liveApi(this.state.ingredients.join(',')).then((recipes) => {
       this.setState({
-        results: JSON.stringify(recipes),
+        recipes,
         canSearch: true,
       });
     });
@@ -70,12 +71,11 @@ class App extends Component {
               canSearch={this.state.canSearch}
             />
           </div>
-          <div className="col-lg-8">
-            <div className="panel panel-default hangry-panel">
-              <div className="panel-body">
-                {this.state.results}
-              </div>
-            </div>
+          <div className="col-lg-8 recipes-col">
+            {
+              this.state.recipes.length > 0
+              && <RecipeList recipes={this.state.recipes}/>
+            }
           </div>
         </div>
       </div>
