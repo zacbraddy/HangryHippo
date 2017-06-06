@@ -1,17 +1,24 @@
 .App {
-  background: url('common/images/app-background.jpg') top repeat-y;
+  text-align: center;
 }
 
-@media screen and (min-width: 1200px) {
-  .content-row {
-    height: 65%;
-  }
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 80px;
 }
 
-.ingredients-col {
-  height: 100%;
+.App-header {
+  background-color: #222;
+  height: 150px;
+  padding: 20px;
+  color: white;
 }
 
-.recipes-col {
-  height: 100%;
+.App-intro {
+  font-size: large;
+}
+
+@keyframes App-logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
 }

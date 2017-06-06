@@ -1,9 +1,0 @@
-.recipes-panel {
-  height: 100%;
-}
-
-@media screen and (min-width: 1200px) {
-  .recipes-panel .panel-body {
-    height: 100%;
-  }
-}
