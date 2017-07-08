@@ -21,9 +21,12 @@ const RecipeListItem = (props) => (
     <div className="recipe-list-item-text-container">
       <div className="recipe-list-item-title">{props.title}</div>
       <div>
-        You have {props.owned} ingredients
+        You have {`${props.missing === 0 ? "all" : ""}`} {props.owned} ingredients
       </div>
-      <div>There's {props.missing} missing though</div>
+      {
+        props.missing > 0 &&
+        <div>There's {props.missing} missing though</div>
+      }
     </div>
   </ListItem>
 );
