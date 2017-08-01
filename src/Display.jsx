@@ -18,7 +18,7 @@ class Display extends Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    this.colouredConsole.log(`Display: componentWillReceiveProps', ' just fired with this for nextProps: ${JSON.stringify(nextProps)}`)
+    this.colouredConsole.log('Display: componentWillReceiveProps', ` just fired with this for nextProps: ${JSON.stringify(nextProps)}`)
   }
 
   shouldComponentUpdate(nextProps, nextState) {
