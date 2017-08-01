@@ -38,7 +38,6 @@ class Display extends Component {
     this.colouredConsole.log('Display: componentWillUnmount', ' just fired!!');
   }
 
-
   render() {
     this.colouredConsole.log('Display: render', ' just fired!');
     return (

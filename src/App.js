@@ -90,16 +90,14 @@ class App extends Component {
             <button onClick={this.handleMessageButtonClick}>
               {this.getButtonText()}
             </button>
+            <div>
+              {this.state.time.toString()}
+            </div>
+            <button onClick={this.handleUpdateTimeClick}>
+              Update Time
+            </button>
           </div>)
         }
-        <div>
-          {this.state.time.toString()}
-        </div>
-        <div>
-          <button onClick={this.handleUpdateTimeClick}>
-            Update Time
-          </button>
-        </div>
         <div>
           <button onClick={this.handleHideButtonClick}>
             { this.state.visible ? 'Hide App' : 'Show App' }
