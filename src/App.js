@@ -47,15 +47,17 @@ class App extends Component {
     this.colouredConsole.log('App: componentDidUpdate', ` just fired with prevProps set to: ${JSON.stringify(prevProps)}; and prevState set to: ${JSON.stringify(prevState)}`);
   }
 
-  getMessage = () =>
-    this.state.hello
-      ? this.props.helloMessage
-      : this.props.goodbyeMessage;
+  get Message() {
+    return this.state.hello
+            ? this.props.helloMessage
+            : this.props.goodbyeMessage;
+  }
 
-  getButtonText = () =>
-    !this.state.hello
-      ? this.props.helloButtonText
-      : this.props.goodbyeButtonText;
+  get ButtonText() {
+    return !this.state.hello
+            ? this.props.helloButtonText
+            : this.props.goodbyeButtonText;
+  }
 
   handleMessageButtonClick = () => {
     this.setState(
@@ -86,9 +88,9 @@ class App extends Component {
         {
           this.state.visible &&
           (<div>
-            <Display message={this.getMessage()}/>
+            <Display message={this.Message}/>
             <button onClick={this.handleMessageButtonClick}>
-              {this.getButtonText()}
+              {this.ButtonText}
             </button>
             <div>
               {this.state.time.toString()}
