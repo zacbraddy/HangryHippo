@@ -23,10 +23,13 @@ class App extends Component {
 
     this.colouredConsole = new ColouredConsole();
     this.colouredConsole.setColour('#333', '#ff99c3');
-    this.colouredConsole.log('Display: constructor', ' just fired!');
+    this.colouredConsole.log('App: constructor', ' just fired!');
   }
 
   componentWillMount() {
+    this.setState({
+      hello: this.props.defaultHello,
+    });
     this.colouredConsole.log('App: componentWillMount', ' just fired!');
   }
 
