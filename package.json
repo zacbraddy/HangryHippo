@@ -4,7 +4,6 @@
   "private": true,
   "dependencies": {
     "bootstrap": "^3.3.7",
-    "glyphicons": "^0.2.0",
     "react": "^16.0.0",
     "react-dom": "^16.0.0"
   },
