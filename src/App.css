@@ -5,3 +5,60 @@
     margin-top: 20px;
     word-wrap: break-word;
 }
+
+img.recipe-list-item-image {
+    width: 70px;
+    height: 70px;
+    margin-right: 10px;
+    border-radius: 6px;
+}
+
+.recipe-list-item-text-container {
+    margin-bottom: 10px;
+}
+
+.recipe-list-item-title {
+    font-size: 16px;
+    font-weight: 700;
+    color: #f66e6e;
+}
+
+img.recipe-list-item-image, .recipe-list-item-image-container, .recipe-list-item-text-container {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.btn.btn-recipe-list-item-open-recipe {
+    float: right;
+    border-radius: 0 6px 6px 0;
+    border-width: 0;
+    min-height: 160px;
+}
+
+@media screen and (min-width: 768px) {
+    img.recipe-list-item-image, .recipe-list-item-image-container, .recipe-list-item-text-container {
+        margin: 0;
+        text-align: left;
+    }
+
+    .recipe-list-item-image-container {
+        float: left;
+        margin-right: 30px;
+    }
+
+    img.recipe-list-item-image {
+        border-radius: 6px 0 0 6px;
+    }
+
+    .recipe-list-item-text-container {
+        padding: 2px 0 0;
+        min-height: 70px;
+    }
+
+    .btn.btn-recipe-list-item-open-recipe {
+        min-height: 70px;
+        border-radius: 0 6px 6px 0;
+    }
+}
