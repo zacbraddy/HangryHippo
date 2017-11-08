@@ -8,43 +8,45 @@
     align-items: center;
 }
 
-img.recipe-list-item-image {
+.recipe-list-item img.recipe-list-item-image {
     width: 70px;
     height: 70px;
     margin-right: 10px;
     border-radius: 6px;
 }
 
-.recipe-list-item-text-container {
+.recipe-list-item .recipe-list-item-text-container {
     margin-bottom: 10px;
     flex: 10;
 }
 
-.recipe-list-item-title {
+.recipe-list-item .recipe-list-item-title {
     font-size: 16px;
     font-weight: 700;
     color: #f66e6e;
 }
 
-.recipe-list-item-image-container {
+.recipe-list-item .recipe-list-item-image-container {
     flex: 1;
 }
 
-.recipe-list-item-chevron {
+.recipe-list-item .recipe-list-item-chevron {
     flex: 0;
     margin-right: 10px;
 }
 
-.recipe-item-card:hover {
+.recipe-list-item .recipe-item-card:hover {
     background-color: #e6e6e6;
 }
 
-img.recipe-list-item-image, .recipe-list-item-image-container, .recipe-list-item-text-container {
+.recipe-list-item img.recipe-list-item-image,
+.recipe-list-item .recipe-list-item-image-container,
+.recipe-list-item .recipe-list-item-text-container {
     text-align: center;
     margin-top: 10px;
 }
 
-.recipe-item-content-container {
+.recipe-list-item .recipe-item-content-container {
     display: flex;
     align-items: center;
     width: 100%;
@@ -54,25 +56,27 @@ img.recipe-list-item-image, .recipe-list-item-image-container, .recipe-list-item
 }
 
 @media screen and (min-width: 768px) {
-    img.recipe-list-item-image, .recipe-list-item-image-container, .recipe-list-item-text-container {
+     .recipe-list-item img.recipe-list-item-image,
+     .recipe-list-item .recipe-list-item-image-container,
+     .recipe-list-item .recipe-list-item-text-container {
         margin: 0;
         text-align: left;
     }
 
-    .recipe-list-item-image-container {
+     .recipe-list-item .recipe-list-item-image-container {
         margin-right: 15px;
     }
 
-    img.recipe-list-item-image {
+     .recipe-list-item img.recipe-list-item-image {
         border-radius: 6px 0 0 6px;
     }
 
-    .recipe-list-item-text-container {
+     .recipe-list-item .recipe-list-item-text-container {
         padding: 2px 0 0;
         min-height: 70px;
     }
 
-    .recipe-item-content-container {
+     .recipe-list-item .recipe-item-content-container {
         min-height: 70px;
         padding: 0;
         flex-direction: row;
