@@ -2,6 +2,14 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import '../styles/recipeItem.css';
 
+const propTypes = {
+  id: PropTypes.number,
+  title: PropTypes.string,
+  image: PropTypes.string,
+  usedIngredientCount: PropTypes.number,
+  missedIngredientCount: PropTypes.number,
+};
+
 const RecipeItem = (props) => (
   <div className="list-item-card recipe-list-item">
     <div className="recipe-item-content-container">
@@ -23,12 +31,6 @@ const RecipeItem = (props) => (
   </div>
 );
 
-RecipeItem.propTypes = {
-  id: PropTypes.number,
-  title: PropTypes.string,
-  image: PropTypes.string,
-  usedIngredientCount: PropTypes.number,
-  missedIngredientCount: PropTypes.number,
-};
+RecipeItem.propTypes = propTypes;
 
 export default RecipeItem;
