@@ -53,9 +53,9 @@ describe('Recipe List Item', () => {
   });
 
   it('should not show a missing ingredient count if there are no missing ingredients', () => {
-      const testMissingIngredientsCount = 0;
-      const wrapper = shallow(<RecipeItem missedIngredientCount={testMissingIngredientsCount} />);
+    const testMissingIngredientsCount = 0;
+    const wrapper = shallow(<RecipeItem missedIngredientCount={testMissingIngredientsCount} />);
 
-      expect(getElement(wrapper)('div')('recipe-list-item-missing-ingredients').length).toEqual(0);
+    expect(getElement(wrapper)('div')('recipe-list-item-missing-ingredients').length).toEqual(0);
   });
 });

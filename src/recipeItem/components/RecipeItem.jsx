@@ -14,12 +14,16 @@ const RecipeItem = (props) => (
   <div className="list-item-card recipe-list-item">
     <div className="recipe-item-content-container">
       <div className="recipe-list-item-image-container">
-        <img src={props.image} className="img-responsive recipe-list-item-image" alt={props.title}/>
+        <img
+          src={props.image}
+          className="img-responsive recipe-list-item-image"
+          alt={props.title}
+        />
       </div>
       <div className="recipe-list-item-text-container">
         <div className="recipe-list-item-title">{props.title}</div>
         <div className="recipe-list-item-used-ingredients">
-          You have {`${props.missedIngredientCount === 0 ? "all" : ""}`} {props.usedIngredientCount} ingredients
+          You have {this.props.missedIngredientCount === 0 ? "all" : this.props.usedIngredientCount} ingredients
         </div>
         {
           props.missedIngredientCount > 0 &&
