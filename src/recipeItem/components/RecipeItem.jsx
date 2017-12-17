@@ -23,7 +23,7 @@ const RecipeItem = (props) => (
       <div className="recipe-list-item-text-container">
         <div className="recipe-list-item-title">{props.title}</div>
         <div className="recipe-list-item-used-ingredients">
-          You have {this.props.missedIngredientCount === 0 ? "all" : this.props.usedIngredientCount} ingredients
+          You have {props.missedIngredientCount === 0 ? "all" : props.usedIngredientCount} ingredients
         </div>
         {
           props.missedIngredientCount > 0 &&
