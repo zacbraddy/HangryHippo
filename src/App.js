@@ -23,17 +23,8 @@ class App extends Component {
                   />
                 </div>
                 <div className="recipe-list-item-text-container">
-                  <div className="recipe-list-item-title">{this.props.title}</div>
-                  <div className="recipe-list-item-used-ingredients">
-                    You have {this.props.missedIngredientCount === 0 ? "all" : this.props.usedIngredientCount} ingredients
-                  </div>
-                  {
-                    this.props.missedIngredientCount > 0 &&
-                    <div className="recipe-list-item-missing-ingredients">There's {this.props.missedIngredientCount} missing though</div>
-                  }
                 </div>
               </div>
-              <i className="recipe-list-item-chevron glyphicon glyphicon-chevron-right" />
             </div>
         );
     }
