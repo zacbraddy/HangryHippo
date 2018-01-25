@@ -4,8 +4,8 @@
   "private": true,
   "dependencies": {
     "bootstrap": "^3.3.7",
-    "react": "^16.0.0",
-    "react-dom": "^16.0.0"
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0"
   },
   "devDependencies": {
     "enzyme": "^3.1.0",

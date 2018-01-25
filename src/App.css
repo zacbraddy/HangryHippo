@@ -36,3 +36,6 @@ html, .App {
   height: 100%;
 }
 
+.panel.header {
+  margin-top: 20px;
+}

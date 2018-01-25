@@ -3,10 +3,7 @@ import ReactDOM from 'react-dom';
 import { shallow, mount } from 'enzyme';
 import RecipeItem from "../../RecipeItem/components/RecipeItem";
 import RecipeItemList from '../components/RecipeItemList';
-
-const getElement = wrapper => elementType => classToSearchFor => (
-  wrapper.find(elementType).findWhere(e => e.props().className && e.props().className.indexOf(classToSearchFor) !== -1)
-);
+import getElement from '../../common/utils/getElement';
 
 const setup = (numberOfItems = 0) => {
   const testEnv = {

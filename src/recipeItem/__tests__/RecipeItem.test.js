@@ -1,10 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import RecipeItem from '../components/RecipeItem';
-
-const getElement = wrapper => elementType => classToSearchFor => (
-  wrapper.find(elementType).findWhere(e => e.props().className && e.props().className.indexOf(classToSearchFor) !== -1)
-);
+import getElement from '../../common/utils/getElement';
 
 describe('Recipe List Item', () => {
   it('renders a div with the className prop set to be an item card', () => {

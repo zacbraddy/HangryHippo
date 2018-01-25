@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import './App.css';
+import Header from './header/components/Header';
 import RecipeItemList from './recipeItemList/components/RecipeItemList';
+import IngredientsList from './IngredientsList/components/IngredientsList'; 
 
 class App extends Component {
   static defaultProps = {
@@ -35,7 +37,21 @@ class App extends Component {
   render() {
     return (
       <div className="App container-fluid">
+        <div className="row container-fluid">
+        <div className="panel panel-default header hangry-panel">
+          <div className="panel-body">
+            <Header />
+            </div>
+          </div>
+        </div>
         <div className="row content-row">
+          <div className="col-lg-4 ingredients-col">
+            <div className="panel panel-default hangry-panel">
+              <div className="panel-body">
+                <IngredientsList />
+              </div>
+            </div>
+          </div>
           <div className="col-lg-8 recipes-col">
             <div className="panel panel-default hangry-panel">
               <div className="panel-body">
