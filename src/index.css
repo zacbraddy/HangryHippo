@@ -19,7 +19,7 @@ body {
 }
 
 @media screen and (min-width: 1200px) {
-  .hangry-panel .panel-body {
+  .hangry-panel {
     height: 100%;
   }
 }
