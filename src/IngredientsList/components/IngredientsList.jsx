@@ -1,6 +1,9 @@
 import React from 'react';
 import IngredientListItem from '../../IngredientListItem/components/IngredientListItem';
+import AddTextItemInput from '../../AddTextItemInput/components/AddTextItemInput';
 import '../styles/ingredientsList.css';
+
+const hasIngredients = props => props.ingredients && props.ingredients.length > 0;
 
 const IngredientsList = (props) => {
   return (
@@ -19,8 +22,7 @@ const IngredientsList = (props) => {
       </div>
       <div className="ingredients-list-container">
         {
-          props.ingredients
-          && props.ingredients.length > 0
+          hasIngredients(props)
           && props.ingredients.map((ingredient, index) => {
               return <IngredientListItem
                         key={index}
@@ -31,6 +33,14 @@ const IngredientsList = (props) => {
                       </IngredientListItem>
             })
         }
+        <AddTextItemInput
+          id="nextIngredient"
+          placeholder="Add another ingredient"
+          value={props.nextIngredient}
+          addHandler={props.addIngredient}
+          changeHandler={props.handleAddNextChange}
+          canAddItem={!hasIngredients(props) || props.canSearch}
+        />
       </div>
     </div>
   );
