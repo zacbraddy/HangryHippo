@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-import Header from './header/components/Header';
+import Header from './Header/components/Header';
 import RecipeItemList from './recipeItemList/components/RecipeItemList';
 import IngredientsList from './IngredientsList/components/IngredientsList'; 
 
@@ -34,6 +34,39 @@ class App extends Component {
     ]
   };
 
+  state = {
+    ingredients: [],
+    nextIngredient: '',
+    canSearch: false,
+  };
+
+  addIngredient = () => {
+    if(this.state.nextIngredient.length === 0) return;
+
+    this.setState({
+      ingredients: this.state.ingredients.concat(this.state.nextIngredient),
+      nextIngredient: '',
+      canSearch: true,
+    });
+  };
+
+  removeIngredient = indexToRemove => {
+    const newIngredients = this.state.ingredients.concat([]);
+    newIngredients.splice(indexToRemove, 1);
+    const newCanSearch = newIngredients.length !== 0;
+
+    this.setState({
+      ingredients: newIngredients,
+      canSearch: newCanSearch,
+    });
+  };
+
+  handleAddNextChange = newAddNextIngredient => {
+    this.setState({
+      nextIngredient: newAddNextIngredient,
+    });
+  };
+
   render() {
     return (
       <div className="App container-fluid">
@@ -48,7 +81,14 @@ class App extends Component {
           <div className="col-lg-4 ingredients-col">
             <div className="panel panel-default hangry-panel">
               <div className="panel-body">
-                <IngredientsList />
+                <IngredientsList 
+                  ingredients={this.state.ingredients}
+                  nextIngredient={this.state.nextIngredient}
+                  addIngredient={this.addIngredient}
+                  removeIngredient={this.removeIngredient}
+                  handleAddNextChange={this.handleAddNextChange}
+                  canSearch={this.state.canSearch}
+                />
               </div>
             </div>
           </div>

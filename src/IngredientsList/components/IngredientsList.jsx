@@ -1,9 +1,19 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import IngredientListItem from '../../IngredientListItem/components/IngredientListItem';
 import AddTextItemInput from '../../AddTextItemInput/components/AddTextItemInput';
 import '../styles/ingredientsList.css';
 
 const hasIngredients = props => props.ingredients && props.ingredients.length > 0;
+
+const propTypes = {
+  ingredients: PropTypes.array,
+  nextIngredient: PropTypes.string,
+  addIngredient: PropTypes.func.isRequired,
+  handleAddNextChange: PropTypes.func.isRequired,
+  removeIngredient: PropTypes.func.isRequired,
+  canSearch: PropTypes.bool,
+};
 
 const IngredientsList = (props) => {
   return (
@@ -45,5 +55,7 @@ const IngredientsList = (props) => {
     </div>
   );
 };
+
+IngredientsList.propTypes = propTypes;
 
 export default IngredientsList;

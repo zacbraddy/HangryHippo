@@ -20,7 +20,7 @@ describe('Ingredients List', () => {
   it('renders without crashing', () => {
     const testEnv = setup();
     const div = document.createElement('div');
-    ReactDOM.render(<IngredientsList />, div);
+    ReactDOM.render(<IngredientsList {...testEnv} />, div);
   });
 
   it('should call the doSearch callback on props when the button is clicked', () => {
@@ -44,7 +44,11 @@ describe('Ingredients List', () => {
   });
 
   it('makes no IngredientListItems if no ingredients are passed in', () => {
-    const wrapper = shallow(<IngredientsList />);
+    const testEnv = setup({
+      ingredients: undefined
+    });
+
+    const wrapper = shallow(<IngredientsList {...testEnv} />);
 
     expect(getElement(wrapper)('div')('ingredients-list-container').children('IngredientListItem').length).toBe(0);
   });
