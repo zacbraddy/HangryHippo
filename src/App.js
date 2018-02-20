@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
 import './App.css';
-import RecipeItem from './recipeItem/components/RecipeItem';
+import IngredientListItem from './ingredientListItem/components/IngredientListItem';
 
-class App extends Component {
-  static defaultProps = {
+const recipeSpec = {
     id: 641803,
     title: "Easy & Delish! ~ Apple Crumble",
     image: "https://spoonacular.com/recipeImages/Easy---Delish--Apple-Crumble-641803.jpg",
@@ -12,9 +11,19 @@ class App extends Component {
     likes: 1
   };
 
+const ingredient = {
+  removeItem: index => console.log(`removeItem fired for index ${index}`),
+  index: 0,
+};
+
+class App extends Component {
+  static defaultProps = ingredient;
+
   render() {
     return (
-      <RecipeItem {...this.props} />
+      <IngredientListItem {...this.props}>
+        Sugar
+      </IngredientListItem>
     );
   }
 }
