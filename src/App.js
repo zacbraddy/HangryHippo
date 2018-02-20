@@ -30,7 +30,36 @@ class App extends Component {
 
   render() {
     return (
-      <IngredientsList {...this.props} />
+      <div className="App container-fluid">
+        <div className="row container-fluid">
+        <div className="panel panel-default header hangry-panel">
+          <div className="panel-body">
+            </div>
+          </div>
+        </div>
+        <div className="row content-row">
+          <div className="col-lg-4 ingredients-col">
+            <div className="panel panel-default hangry-panel">
+              <div className="panel-body">
+                <IngredientsList 
+                  ingredients={ingredientsList.ingredients}
+                  nextIngredient={ingredientsList.nextIngredient}
+                  addIngredient={ingredientsList.addIngredient}
+                  removeIngredient={ingredientsList.removeIngredient}
+                  handleAddNextChange={ingredientsList.handleAddNextChange}
+                  canSearch={ingredientsList.canSearch}
+                />
+              </div>
+            </div>
+          </div>
+          <div className="col-lg-8 recipes-col">
+            <div className="panel panel-default hangry-panel">
+              <div className="panel-body">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     );
   }
 }
