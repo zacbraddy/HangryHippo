@@ -7,3 +7,35 @@
     display: flex;
     align-items: center;
 }
+
+@media screen and (min-width: 1025px) {
+  html, body, .App {
+    height: 100%;
+  }
+}
+
+html, .App {
+  min-height: 100%;
+}
+
+.App {
+  background: url('common/images/app-background.jpg') top repeat-y;
+}
+
+@media screen and (min-width: 1200px) {
+  .content-row {
+    height: 65%;
+  }
+}
+
+.ingredients-col {
+  height: 100%;
+}
+
+.recipes-col {
+  height: 100%;
+}
+
+.panel.header {
+  margin-top: 20px;
+}
