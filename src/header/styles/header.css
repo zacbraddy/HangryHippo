@@ -1,0 +1,27 @@
+@media screen and (min-width: 986px){
+  .header-container {
+    width: 950px;
+    float: left;
+  }
+}
+
+.header-logo {
+  background-color: #25b7d3;
+}
+
+.header-logo, .header-logo img {
+  width: 128px;
+  height: 128px;
+  border-radius: 64px;
+}
+
+.header-title {
+  font-size: 36px;
+  font-weight: 700;
+  font-family: 'BioRhyme', serif;
+}
+
+.header-tagline {
+  font-style: italic;
+}
+
