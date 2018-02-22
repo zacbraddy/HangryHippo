@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import Header from './header/components/Header';
 import IngredientsList from './ingredientsList/components/IngredientsList';
+import RecipeItemList from './recipeItemList/components/RecipeItemList';
 
 const recipeSpec = {
     id: 641803,
@@ -57,6 +58,7 @@ class App extends Component {
           <div className="col-lg-8 recipes-col">
             <div className="panel panel-default hangry-panel">
               <div className="panel-body">
+                <RecipeItemList items={[recipeSpec, recipeSpec, recipeSpec]} />
               </div>
             </div>
           </div>
