@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
+import Header from './header/components/Header';
 import IngredientsList from './ingredientsList/components/IngredientsList';
 
 const recipeSpec = {
@@ -32,8 +33,9 @@ class App extends Component {
     return (
       <div className="App container-fluid">
         <div className="row container-fluid">
-        <div className="panel panel-default header hangry-panel">
-          <div className="panel-body">
+          <div className="panel panel-default header hangry-panel">
+            <div className="panel-body">
+              <Header />
             </div>
           </div>
         </div>

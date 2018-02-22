@@ -7,11 +7,12 @@ const Header = () => (
     <div className="row">
       <div className="col-md-2">
         <div className="header-logo center-block">
-          /* Image goes here */
+          <img src={logo} alt="logo" />
         </div>
       </div>
       <div className="col-md-4 text-center">
-        /* Header and tag line goes here */
+        <div className="header-title">Hangry Hippo</div>
+        <div className="header-tagline">No time to explain, just feed me!!</div>
       </div>
     </div>
   </div>
