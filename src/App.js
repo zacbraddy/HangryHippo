@@ -36,7 +36,7 @@ class App extends Component {
         <div className="row container-fluid">
           <div className="panel panel-default header hangry-panel">
             <div className="panel-body">
-              <Header />
+              /* Header goes here */
             </div>
           </div>
         </div>
@@ -58,7 +58,7 @@ class App extends Component {
           <div className="col-lg-8 recipes-col">
             <div className="panel panel-default hangry-panel">
               <div className="panel-body">
-                <RecipeItemList items={[recipeSpec, recipeSpec, recipeSpec]} />
+                /* Receipe Item List goes here */
               </div>
             </div>
           </div>
