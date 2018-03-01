@@ -17,7 +17,13 @@ describe('Ingredient List Item', () => {
     ReactDOM.render(<IngredientListItem />, div);
   });
 
-  it('calles the removeItem callback when the remove button is clicked and passes the index prop as a parameter', () => {
+  it('should pass children into a list item card div', () => {
+    const wrapper = shallow(<IngredientListItem>I'm Batman</IngredientListItem>);
+
+    expect(getElement(wrapper)('div')('ingredient-list-item-value').text()).toBe(`I'm Batman`);
+  });
+
+  it('calls the removeItem callback when the remove button is clicked and passes the index prop as a parameter', () => {
     const testEnv = setup({
       removeItem: jest.fn(),
       index: 1,
@@ -28,12 +34,6 @@ describe('Ingredient List Item', () => {
     getElement(wrapper)('button')('btn-ingredient-list-item').simulate('click')
     
     expect(testEnv.removeItem).toBeCalledWith(testEnv.index);    
-  });
-
-  it('should pass children into a list item card div', () => {
-    const wrapper = shallow(<IngredientListItem>I'm Batman</IngredientListItem>);
-
-    expect(getElement(wrapper)('div')('ingredient-list-item-value').text()).toBe(`I'm Batman`);
   });
 });
 
