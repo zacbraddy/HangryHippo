@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import './App.css';
 import Header from './header/components/Header';
 import IngredientsList from './ingredientsList/components/IngredientsList';
-import RecipeItemList from './recipeItemList/components/RecipeItemList';
 
 const recipeSpec = {
     id: 641803,
