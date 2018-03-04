@@ -12,11 +12,6 @@ const recipeSpec = {
     likes: 1
   };
 
-const ingredient = {
-  removeItem: index => console.log(`removeItem fired for index ${index}`),
-  index: 0,
-};
-
 const ingredientsList = {
   ingredients: ['Water', 'Flour'],
   nextIngredient: 'Sugar',
