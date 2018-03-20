@@ -12,6 +12,7 @@ const propTypes = {
   addIngredient: PropTypes.func.isRequired,
   handleAddNextChange: PropTypes.func.isRequired,
   removeIngredient: PropTypes.func.isRequired,
+  doSearch: PropTypes.func.isRequired,
   canSearch: PropTypes.bool,
 };
 
