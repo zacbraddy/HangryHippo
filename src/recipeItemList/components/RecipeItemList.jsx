@@ -12,6 +12,7 @@ export default class RecipeItemList extends Component {
       usedIngredientCount: PropTypes.number,
       missedIngredientCount: PropTypes.number,
       likes: PropTypes.number,
+      showRecipe: PropTypes.func,
     }))
   };
 
@@ -26,7 +27,7 @@ export default class RecipeItemList extends Component {
             this.props.items 
               && this.props.items.length > 0 
               && this.props.items.map(
-                (item, index) => (<RecipeItem {...item} key={index} />)
+                (item, index) => (<RecipeItem {...item} showRecipe={this.props.showRecipe} key={index} />)
               )
           }
       </div>

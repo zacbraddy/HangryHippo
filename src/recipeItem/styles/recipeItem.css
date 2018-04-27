@@ -1,3 +1,7 @@
+.recipe-list-item {
+  cursor: pointer;
+}
+
 .recipe-list-item img.recipe-list-item-image {
     width: 70px;
     height: 70px;

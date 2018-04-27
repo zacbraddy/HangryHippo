@@ -8,10 +8,11 @@ const propTypes = {
   image: PropTypes.string,
   usedIngredientCount: PropTypes.number,
   missedIngredientCount: PropTypes.number,
+  showRecipe: PropTypes.func,
 };
 
 const RecipeItem = (props) => (
-  <div className="list-item-card recipe-list-item">
+  <div className="list-item-card recipe-list-item" onClick={() => props.showRecipe(props.id)}>
     <div className="recipe-item-content-container">
       <div className="recipe-list-item-image-container">
         <img
