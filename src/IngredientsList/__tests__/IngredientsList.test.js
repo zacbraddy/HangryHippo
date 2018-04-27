@@ -8,7 +8,7 @@ const setup = (input = {}) => (
   {
     doSearch: input.doSearch || jest.fn(),
     canSearch: !!input.canSearch,
-    ingredients: input.ingredients || [],
+    ingredients: input.makeIngredientsUndefined ? undefined : input.ingredients || [],
     removeIngredient: input.removeIngredient || jest.fn(),
     nextIngredient: input.nextIngredient || '',
     addIngredient: input.addIngredient || jest.fn(),
@@ -45,7 +45,7 @@ describe('Ingredients List', () => {
 
   it('makes no IngredientListItems if no ingredients are passed in', () => {
     const testEnv = setup({
-      ingredients: undefined
+      makeIngredientsUndefined: true,
     });
 
     const wrapper = shallow(<IngredientsList {...testEnv} />);
@@ -143,3 +143,4 @@ describe('Ingredients List', () => {
     expect(wrapper.find('AddTextItemInput').props().canAddItem).toBe(true);
   });
 });
+

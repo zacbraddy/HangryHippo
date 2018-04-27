@@ -40,3 +40,4 @@ const AddTextItemInput = props => (
 AddTextItemInput.propTypes = propTypes;
 
 export default AddTextItemInput;
+

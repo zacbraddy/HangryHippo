@@ -144,3 +144,4 @@ describe('AddTextItemInput', () => {
     expect(getElement(wrapper)('button')('btn-success').props().disabled).toBe(true);
   });
 });
+

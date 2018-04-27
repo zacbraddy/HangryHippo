@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import IngredientListItem from '../../IngredientListItem/components/IngredientListItem';
-import AddTextItemInput from '../../AddTextItemInput/components/AddTextItemInput';
+import IngredientListItem from '../../ingredientListItem/components/IngredientListItem';
+import AddTextItemInput from '../../addTextItemInput/components/AddTextItemInput';
 import '../styles/ingredientsList.css';
 
 const hasIngredients = props => props.ingredients && props.ingredients.length > 0;
@@ -12,6 +12,7 @@ const propTypes = {
   addIngredient: PropTypes.func.isRequired,
   handleAddNextChange: PropTypes.func.isRequired,
   removeIngredient: PropTypes.func.isRequired,
+  doSearch: PropTypes.func.isRequired,
   canSearch: PropTypes.bool,
 };
 
@@ -59,3 +60,4 @@ const IngredientsList = (props) => {
 IngredientsList.propTypes = propTypes;
 
 export default IngredientsList;
+

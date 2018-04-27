@@ -60,3 +60,4 @@ describe('List of Recipe Items', () => {
     expect(wrapper.find('RecipeItem').props()).toEqual(testEnv.items[0]);
   });
 });
+
