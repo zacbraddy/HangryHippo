@@ -76,6 +76,7 @@ describe('Ingredients List', () => {
     expect(result.length).toBe(1);
     expect(result.props().removeItem).toBe(testEnv.removeIngredient);
     expect(result.props().children).toBe(testEnv.ingredients[0]);
+    expect(result.props().canSearch).toBe(testEnv.canSearch);
   });
 
   it('passes the nextIngredient prop to the value of an AddTextItemInput component', () => {

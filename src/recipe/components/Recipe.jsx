@@ -8,14 +8,14 @@ const propTypes = {
 };
 
 const recipe = props => {
-  const instructions = props.instructions.length > 0
+  const instructions = props.instructions && props.instructions.length > 0
     ? props.instructions
     : 'Loading recipe...';
     
   return (
     <div>
-      <button class="btn btn-info" onClick={props.hideRecipe}>Back</button>
-      <div class="recipe" dangerouslySetInnerHTML={{__html: instructions}} />
+      <button className="recipe-back-button btn btn-info" onClick={props.hideRecipe}>Back</button>
+      <div className="recipe" dangerouslySetInnerHTML={{__html: instructions}} />
     </div>
   );
 };

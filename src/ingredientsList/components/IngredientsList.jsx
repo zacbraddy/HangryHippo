@@ -39,6 +39,7 @@ const IngredientsList = (props) => {
                         key={index}
                         index={index}
                         removeItem={props.removeIngredient}
+                        canSearch={props.canSearch}
                       >
                         {ingredient}
                       </IngredientListItem>

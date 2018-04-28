@@ -6,6 +6,7 @@ const propTypes = {
   children: PropTypes.string,
   removeItem: PropTypes.func.isRequired,
   index: PropTypes.number.isRequired,
+  canSearch: PropTypes.bool,
 };
 
 const IngredientListItem = props => (
@@ -14,7 +15,7 @@ const IngredientListItem = props => (
       {props.children}
     </div>
     <div className="ingredient-list-item-button-container">
-      <button className="btn btn-danger btn-ingredient-list-item" onClick={e => props.removeItem(props.index)}>
+      <button disabled={!props.canSearch} className="btn btn-danger btn-ingredient-list-item" onClick={e => props.removeItem(props.index)}>
         <i className="glyphicon glyphicon-remove" />
       </button>
     </div>

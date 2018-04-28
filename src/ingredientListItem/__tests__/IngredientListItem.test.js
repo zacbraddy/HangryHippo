@@ -35,5 +35,15 @@ describe('Ingredient List Item', () => {
     
     expect(testEnv.removeItem).toBeCalledWith(testEnv.index);    
   });
+
+  it('disables the remove button when a search is not allowed to be run', () => {
+    const testEnv = setup({
+      canSearch: false,
+    });
+
+    const wrapper = shallow(<IngredientListItem {...testEnv} />);
+
+    expect(getElement(wrapper)('button')('btn-ingredient-list-item').props().disabled).toBe(true);
+  });
 });
 
