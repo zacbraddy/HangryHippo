@@ -2,7 +2,6 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { shallow } from 'enzyme';
 import App, { recipeInstructions } from './App';
-import getElement from './common/utils/getElement';
 
 describe('App tests', () => {
   it('renders without crashing', () => {
