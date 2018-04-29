@@ -23,8 +23,6 @@ class App extends Component {
     ingredients: [],
     nextIngredient: '',
     canSearch: false,
-    isShowingRecipe: false,
-    instructions: '',
   };
 
   addIngredient = () => {
@@ -73,26 +71,17 @@ class App extends Component {
   };
 
   showRecipe = id => {
-    this.setState({
-      canSearch: false,
-      isShowingRecipe: true,
-    });
+    /* set canSearch to false an isShowingRecipe to true in state */
 
     return new Promise((resolve, reject) => {
       setTimeout(resolve, 2000, recipeInstructions.instructions);
     }).then(instructions => {
-      this.setState({
-        instructions,
-      });
+      /* set instructions property on state to the value of the instructions returned from our fake api call */
     });
   };
 
   hideRecipe = () => {
-    this.setState({
-      canSearch: this.state.ingredients.length !== 0,
-      isShowingRecipe: false,
-      instructions: '',
-    });
+    /* reset canSearch, set isShowingRecipe to false and clear the instructions property on state back to an empty string */
   };
       
 
@@ -126,9 +115,12 @@ class App extends Component {
             <div className="panel panel-default hangry-panel">
               <div className="panel-body">
                 {
-                  this.state.isShowingRecipe
-                    ? <Recipe instructions={this.state.instructions} hideRecipe={this.hideRecipe} />
-                    : <RecipeItemList items={this.state.recipes} showRecipe={this.showRecipe} />
+                  /* Conditionally render a Recipe component if isShowingRecipe is true */
+                  /* or a RecipeItemList if isShowingRecipe is false */
+                  /* You need to pass the instructions property off state to the instructions prop on the Recipe component */
+                  /* Also pass the hideRecipe call back on this component to the hideRecipe prop on the Recipe component */
+                  /* Pass the showRecipe call back on this component to the showRecipe prop on the RecipeItemList component */
+                  <RecipeItemList items={this.state.recipes} />
                 }
               </div>
             </div>
