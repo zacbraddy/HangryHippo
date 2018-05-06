@@ -142,6 +142,22 @@ describe('App tests', () => {
     expect(wrapper.state().recipes.length).toBeLessThanOrEqual(5);
   });
 
+  it('should set canSearch to false before the doSearch promise fires', () => {
+    const wrapper = shallow(<App />);
+
+    wrapper.find('IngredientsList').props().doSearch();
+
+    expect(wrapper.state().canSearch).toBe(false);
+  });
+
+  it('should set canSerach to true after the doSearch promise fires', async() => {
+    const wrapper = shallow(<App />);
+
+    await wrapper.find('IngredientsList').props().doSearch();
+
+    expect(wrapper.state().canSearch).toBe(true);
+  });
+
   it('should set the recipe instructions in state when showRecipe is called by the RecipeItemList', async () => {
     const wrapper = shallow(<App />);
 
