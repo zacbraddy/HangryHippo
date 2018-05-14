@@ -1,7 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { shallow } from 'enzyme';
-import App, { recipeInstructions } from './App';
+import App, { recipeInstructions } from '../components/App';
+jest.mock('../../communications/spoonacularApi');
+import { getRecipesMock, getRecipeByIdMock, recipeSpec } from '../../communications/spoonacularApi';
 
 describe('App tests', () => {
   it('renders without crashing', () => {
@@ -136,10 +138,12 @@ describe('App tests', () => {
   it('should supply a list of recipes to the recipes property of state when doSearch is called by the IngredientsList', async () => {
     const wrapper = shallow(<App />);
 
+    getRecipesMock.mockImplementation(() => new Promise(resolve => resolve([recipeSpec])));
+
     await wrapper.find('IngredientsList').props().doSearch();
 
-    expect(wrapper.state().recipes.length).toBeGreaterThanOrEqual(1);
-    expect(wrapper.state().recipes.length).toBeLessThanOrEqual(5);
+    expect(wrapper.state().recipes.length).toEqual(1);
+    expect(wrapper.state().recipes[0]).toBe(recipeSpec);
   });
 
   it('should set canSearch to false before the doSearch promise fires', () => {
@@ -161,9 +165,11 @@ describe('App tests', () => {
   it('should set the recipe instructions in state when showRecipe is called by the RecipeItemList', async () => {
     const wrapper = shallow(<App />);
 
+    getRecipeByIdMock.mockImplementationOnce(() => new Promise(resolve => resolve(`I'm Batman`)));
+
     await wrapper.find('RecipeItemList').props().showRecipe(20);
 
-    expect(wrapper.state().instructions).toBe(recipeInstructions.instructions);
+    expect(wrapper.state().instructions).toBe(`I'm Batman`);
   });
 
   it('should set the isShowingRecipe flag when showRecipe is called by the RecipeItemList', async () => {

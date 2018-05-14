@@ -1,15 +1,11 @@
 import React, { Component } from 'react';
-import './App.css';
-import Header from './header/components/Header';
-import IngredientsList from './ingredientsList/components/IngredientsList';
-import RecipeItemList from './recipeItemList/components/RecipeItemList';
-import Recipe from './recipe/components/Recipe';
+import '../styles/App.css';
+import Header from '../../header/components/Header';
+import IngredientsList from '../../ingredientsList/components/IngredientsList';
+import RecipeItemList from '../../recipeItemList/components/RecipeItemList';
+import Recipe from '../../recipe/components/Recipe';
 
-import SpoonacularApi from "./communications/spoonacularApi.js";
-
-export const recipeInstructions = {
-  "instructions": "<ol><li>Preheat Oven 350 degrees:</li><li>Combine sliced apples, lemon zest, dash of ground cloves and sugar in a bowl and toss. Place in a deep dish buttered baking dish.</li><li>In a smaller bowl combine the flour, sugar, brown sugar and butter. Mix this together with your fingers until it becomes crumbly. Place this mixture on top of the apples.</li><li>Bake about 40-45 minutes, until the topping gets a little golden color.</li></ol>",
-};
+import SpoonacularApi from '../../communications/spoonacularApi';
 
 class App extends Component {
   state = {

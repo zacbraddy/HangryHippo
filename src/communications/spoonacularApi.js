@@ -52,4 +52,4 @@ class SpoonacularApi {
   };
 };
 
-export default new SpoonacularApi;
+export default new SpoonacularApi();

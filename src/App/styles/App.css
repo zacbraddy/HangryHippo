@@ -19,7 +19,7 @@ html, .App {
 }
 
 .App {
-  background: url('common/images/app-background.jpg') top repeat-y;
+  background: url('../../common/images/app-background.jpg') top repeat-y;
 }
 
 @media screen and (min-width: 1200px) {
