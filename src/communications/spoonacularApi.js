@@ -1,6 +1,8 @@
 import axios from "axios";
 
 class SpoonacularApi {
+  apiKey = 'rzk8LeXX9wmshBeNRIN4AQo9EY1Ip11YYGxjsnzGQIwVHsU7EU';
+
   getRecipes = (ingredients) => {
     return axios.get('https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/findByIngredients',
       {
@@ -12,7 +14,7 @@ class SpoonacularApi {
           ranking: 1,
         },
         headers: {
-          'X-Mashape-Key': 'rzk8LeXX9wmshBeNRIN4AQo9EY1Ip11YYGxjsnzGQIwVHsU7EU',
+          'X-Mashape-Key': this.apiKey,
           Accept: 'application/json',
         },
         transformResponse: [data => {
@@ -39,7 +41,7 @@ class SpoonacularApi {
           includeNutrition: false,
         },
         headers: {
-          'X-Mashape-Key': 'rzk8LeXX9wmshBeNRIN4AQo9EY1Ip11YYGxjsnzGQIwVHsU7EU',
+          'X-Mashape-Key': this.apiKey,
           Accept: 'application/json',
         },
         transformResponse: [data => JSON.parse(data).instructions],
