@@ -64,12 +64,8 @@ class App extends Component {
       isShowingRecipe: true,
     });
 
-    SpoonacularApi.getRecipeById(id)
-    .then(instructions => {
-      this.setState({
-        instructions,
-      });
-    });
+    // You will have to add your call to the getRecipesById method of the SpoonacularApi module that you have
+    // created and then populate the instructions property of state when the promise resolves.
   };
 
   hideRecipe = () => {

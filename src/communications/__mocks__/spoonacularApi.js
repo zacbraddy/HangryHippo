@@ -6,15 +6,15 @@ export const recipeSpec = {
     missedIngredientCount: 4,
   };
 
-const recipeInstructions = `I'm Batman`;
+// You should supply an exported value here of what your getRecipesById mock will return. It's being exported so we can use it for comparison in our tests
 
 export const getRecipesMock = jest.fn().mockImplementation(() => new Promise((resolve, reject) => resolve([recipeSpec])));
-export const getRecipeByIdMock = jest.fn().mockImplementation(() => new Promise((resolve, reject) => resolve(recipeInstructions.instructions)));
+// You'll need to create a mock of the getRecipesById method here you can make it resolve to the faked recipe instructions you've defined above
 
 const mock = jest.fn().mockImplementation(() => {
   return {
     getRecipes: getRecipesMock, 
-    getRecipeById: getRecipeByIdMock,
+    // Don't forget to add your mocked method to the mock that we return out of this file
   }
 });
 
