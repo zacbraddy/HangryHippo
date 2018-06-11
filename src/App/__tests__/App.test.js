@@ -154,7 +154,7 @@ describe('App tests', () => {
     expect(wrapper.state().canSearch).toBe(false);
   });
 
-  it('should set canSerach to true after the doSearch promise fires', async() => {
+  it('should set canSearch to true after the doSearch promise fires', async() => {
     const wrapper = shallow(<App />);
 
     await wrapper.find('IngredientsList').props().doSearch();
