@@ -138,7 +138,7 @@ describe('App tests', () => {
   it('should supply a list of recipes to the recipes property of state when doSearch is called by the IngredientsList', async () => {
     const wrapper = shallow(<App />);
 
-    getRecipesMock.mockImplementation(() => new Promise(resolve => resolve([recipeSpec])));
+    getRecipesMock.mockImplementationOnce(() => new Promise(resolve => resolve([recipeSpec])));
 
     await wrapper.find('IngredientsList').props().doSearch();
 
