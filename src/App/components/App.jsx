@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import '../styles/App.css';
-import Header from '../../header/components/Header';
+import Header from '../../header/components/header';
 import IngredientsList from '../../ingredientsList/components/IngredientsList';
 import RecipeItemList from '../../recipeItemList/components/RecipeItemList';
 import Recipe from '../../recipe/components/Recipe';
