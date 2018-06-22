@@ -10,7 +10,7 @@ class SpoonacularApi {
         params: {
           fillIngredients: false,
           ingredients: ingredients.join(','),
-          limitiLicense: false,
+          limitLicense: false,
           number: 5,
           ranking: 1,
         },
